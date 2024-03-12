@@ -52,3 +52,24 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.delete {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#add-heroname {
+  padding: 10px 5px;
+  font-size: larger;
+}
+.add-hero-box label {
+  display: block;
+}
+.add-hero-box input {
+  margin: 0px 10px 0 0;
+}

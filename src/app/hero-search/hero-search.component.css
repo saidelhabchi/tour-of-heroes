@@ -1,0 +1,11 @@
+#search-component {
+    font-size: larger;
+}
+#search-component label {
+    display: block;
+    margin: 5px 0px;
+}
+#search-component input {
+    padding: 10px 5px;
+    font-size: larger;
+}

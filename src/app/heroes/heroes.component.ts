@@ -21,4 +21,15 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes()
     .subscribe(heroes => this.heroes = heroes);
   }
+  add(heroName:string){
+    heroName.trim()
+    if (!heroName){
+      return ;
+    }
+    this.heroService.addHero({ id : this.heroes.length + 12,name : heroName }).subscribe(hero => this.heroes.push(hero))
+  }
+  delete(hero:Hero): void{
+    this.heroes = this.heroes.filter(h => h!== hero)
+    this.heroService.deleteHero(hero.id).subscribe();
+  }
 }
