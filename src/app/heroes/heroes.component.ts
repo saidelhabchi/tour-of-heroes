@@ -9,27 +9,16 @@ import { MessageService } from '../services/message.service';
   styleUrls: ['./heroes.component.css'],
 })
 export class HeroesComponent implements OnInit {
-  constructor(private heroService:HeroService, private messageService:MessageService) {}
-  
-  //lifecycle hooks
+  heroes: Hero[] = [];
+
+  constructor(private heroService: HeroService) { }
+
   ngOnInit(): void {
-    this.getHeroes()
+    this.getHeroes();
   }
 
-  //variables
-  heroes: Hero[] = []
-  selectedHero?: Hero
-  
-  //methodes
   getHeroes(): void {
-    // this.heroes = this.heroService.getHeroes()
-    this.heroService
-      .getHeroes()
-      .subscribe(data => this.heroes = data)
-
-  }
-  onSelect(hero:Hero):void {
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-    this.selectedHero = hero
+    this.heroService.getHeroes()
+    .subscribe(heroes => this.heroes = heroes);
   }
 }
